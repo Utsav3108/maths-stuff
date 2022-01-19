@@ -35,13 +35,16 @@ def Curve():
                 plt.title("Fitting Curve")          #Information of plot
                 plt.xlabel("x-axis")
                 plt.ylabel("y-axis")
-                plt.legend(loc ="lower left")
+                plt.legend(loc ="lower right")
 
                 plt.show() 
             if ask=="n":
                 exit()
     
-        ni = int(input("Enter no. of inputs:"))
+        ni = int(input("Enter no. of inputs(more than 1):"))
+        if ni<=1:
+            print("Inputs must be greater than one")
+            Curve()
         for i in range(ni):
                 xi = float(input("Enter elements of x:"))
                 x.append(xi)
@@ -132,8 +135,10 @@ def Curve():
             exit()    
         else:
             print("give valid input")   
-    except Exception:
+    except Exception as e:
+        print(e)
         print("Invalid Input")
+        Curve()
 Curve()
 
 

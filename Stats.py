@@ -97,5 +97,3 @@ class stats:
         plt.ylabel(f'{ylabel}')
         plt.show()
         
-
-
